@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Barman Mobile</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <div data-role="page" data-theme="b" id="homePage">
+            <div data-role="header">
+                <h1>Barman Mobile</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p style="text-align: center">Na jakiego drinka masz dziś ochotę?</p>
+                <p style="text-align: center"><img src="img/drink-logo.png" alt="logo"></p>
+                <br/>
+                <button onclick="location.href='index.html#alcohol'">Z Alkoholem</button>
+                <button onclick="location.href='index.html#noAlcohol'">Bez Alkoholu</button>
+                <br/>
+                <button onclick="location.href='index.html#myRecipes'">Moje Przepisy</button>
+            </div>
+            <div data-role="footer" id="footer"> 
+                <h3>Author: Marek Nieckula</h3> 
+            </div> 
+        </div> <!-- Home Page -->
+            
+        <div data-role="page" data-theme="b" id="alcohol">
+            <div data-role="header" id="mainHead">
+                <h1>Barman Mobile</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p style="text-align:center">Drinki Z Alkoholem</p>
+                <p style="text-align:center"><img src="img/drink-alcohol-logo.png"></p>
+             </div>
+            <div data-role="footer" id="footer"> 
+                <h3>Author: Marek Nieckula</h3>
+            </div>    
+        </div> <!-- Alcohol Page-->
+        
+        <div data-role="page" data-theme="b" id="noAlcohol">
+            <div data-role="header">
+                <h1>Barman Mobile</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p style="text-align:center">Drinki Bez Alkoholu</p>
+                <p style="text-align:center"><img src="img/drink-no-alcohol-logo.png"></p>
+            </div>
+            <div data-role="footer" id="footer"> 
+                <h3>Author: Marek Nieckula</h3>
+            </div>    
+        </div> <!-- No Alcohol Page-->
+        
+        <div data-role="page" data-theme="b" id="myRecipes">
+            <div data-role="header">
+                <h1>Barman Mobile</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p style="text-align:center">Moje Przepisy</p>
+                <p style="text-align:center"><img src="img/my-recipes-logo.png"></p>
+                <button onclick="location.href='index.html#addRecipe'">Dodaj Nowy Przepis!</button>
+            </div>
+            <div data-role="footer" id="footer"> 
+                <h3>Author: Marek Nieckula</h3>
+            </div>    
+        </div> <!-- My Recipes Page-->
+        
+        <div data-role="page" data-theme="b" id="addRecipe">
+            <div data-role="header">
+                <h1>Barman Mobile</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p style="text-align:center">Dodaj Nowy Przepis</p>
+            </div>
+            <div data-role="footer" id="footer"> 
+                <h3>Author: Marek Nieckula</h3>
+            </div>    
+        </div> <!-- Add New Recipe Page-->
+        
+    </body>
+</html>
