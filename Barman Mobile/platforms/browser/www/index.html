@@ -98,13 +98,11 @@
             <div data-role="header">
                 <h1>Barman Mobile</h1>
             </div>
-            <div data-role="main" class="ui-content">
+            <div data-role="main" class="ui-content" id="myBrandNew">
                 <p style="text-align:center">Moje Przepisy</p>
                 <p style="text-align:center"><img src="img/my-recipes-logo.png"></p>
                 <button onclick="location.href='index.html#addRecipe'">Dodaj Nowy Przepis!</button>
-                <div data-role="collapsible-set" id="newRecipes">
-                    
-                </div>
+                <hr/>
             </div>
             <div data-role="footer" id="footer"> 
                 <h3>Author: Marek Nieckula</h3>
@@ -117,15 +115,12 @@
             </div>
             <div data-role="main" class="ui-content">
                 <p style="text-align:center">Dodaj Nowy Przepis</p>
-                <form>
-                Tytuł:<br/>
+                <label for="recipeTitle">Tytuł:</label>
                 <input type="text" id="recipeTitle">
-                </form>
-                <br/>
-                Treść:<br/>
-                <input type="text" style="height:200px" id="recipeContent">
-                <br/>
-                <button onclick="addRecipe()">Dodaj!</button>
+                <label for="recipeContent">Treść przepisu:</label>
+                <textarea id="recipeContent"></textarea>
+                <button id="addNewRecipe" onclick="addRecipe()">Dodaj!</button>
+                <button id="makePhoto" data-icon="camera"></button>
             </div>
             <div data-role="footer" id="footer"> 
                 <h3>Author: Marek Nieckula</h3>

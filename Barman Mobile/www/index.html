@@ -37,6 +37,44 @@
             <div data-role="main" class="ui-content">
                 <p style="text-align:center">Drinki Z Alkoholem</p>
                 <p style="text-align:center"><img src="img/drink-alcohol-logo.png"></p>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible">
+                        <h3>Mojito</h3>
+                        <p style="text-align:center">Mojito drink zaczynamy przygotowywać od włożenia do szklanki 4-5 cząstek limonki, 6-8 listków mięty oraz wlewamy syrop cukrowy (lub wsypujemy dwie łyżeczki cukru). Wszystko rozcieramy muddlerem. Następnie wsypujemy kruszony lód (mniej więcej do połowy) i wlewamy biały rum. Dokładnie mieszamy i uzupełniamy szklankę kruszonym lodem oraz wodą gazowaną. Mojito dekorujemy plastrem limonki i gałązką mięty.
+                            <br/>
+                            <img src="img/mojito.png">
+                        </p>
+                    </div> <!--Collapsible item 1-->
+                    <div data-role="collapsible">
+                        <h3>Black Russian</h3>
+                        <p style="text-align:center">Przygotowanie Black Russian nie powinno przysporzyć większych trudności ani przy zakupie składników, ani przy samym przyrządzaniu drinka. Wystarczy wypełnić tumbler na lodzie, który jednocześnie będzie służyć jako naczynie do podania drinka, do połowy kostkami lodu. Następnie należy wlać 1,5 miarki wódki i 0,75 miarki likieru kawowego. Potem wystarczy już tylko bardzo delikatnie zamieszać drinka.
+                            <br/>
+                            <img src="img/black-russian.png">
+                        </p>
+                    </div> <!--Collapsible item 2-->
+                    <div data-role="collapsible">
+                        <h3>White Russian</h3>
+                        <p style="text-align:center">Do szklanki wrzucić lód, wlać wódkę i likier kawowy, zamieszać. Na wierzch wlać delikatnie po ściance lub łyżeczce mleczko. Można też wlać mleczko po prostu i zamieszać.
+                            <br/>
+                            <br/>
+                            <img src="img/white-russian.png">
+                        </p>
+                    </div> <!--Collapsible item 2-->
+                    <div data-role="collapsible">
+                        <h3>Sex On The Beach</h3>
+                        <p style="text-align:center">Do wypełnionej lodem szklanicy barmańskiej wlać składniki nie uwzględniając soku żurawinowego. Wlane składniki wstrząsnąć w shakerze przez ok 10s sek. Następnie zawartość przelać do uprzednio przygotowanej szklanki typu highball, bądź też fancy wypełnionej do połowy lodem. Następnie dolać tzw. splash, którym w tym momencie jest sok żurawinowy. Ozdobić drinka.
+                            <br/>
+                            <img src="img/sex-on-the-beach.png">
+                        </p>
+                    </div> <!--Collapsible item 2-->
+                    <div data-role="collapsible">
+                        <h3>Blue Kamikaze</h3>
+                        <p style="text-align:center">Do shakera wrzucamy kilka kostek lodu, zamykamy i potrząsamy żeby shaker się schłodził. Następnie otwieramy i wlewamy sok z cytryny lub limonki, wódkę oraz likier pomarańczowy Blue Curaçao. Gdy mamy już wszystkie składniki w shakerze, zamykamy go ponownie i potrząsamy dynamicznie, starając się trzymać shaker tylko palcami żeby nie przejmował ciepła naszych dłoni. Kiedy składniki schłodzą się i dobrze wymieszają, przelewamy naszego drinka, odcedzając lód do małych kieliszków (jak do wódki) i podajemy po kilka sztuk naszym gościom. Pijemy oczywiście do dna.
+                            <br/>
+                            <img src="img/blue-kamikaze.png">
+                        </p>
+                    </div> <!--Collapsible item 2-->
+                </div> <!--Collapsible Set-->
              </div>
             <div data-role="footer" id="footer"> 
                 <h3>Author: Marek Nieckula</h3>
@@ -60,10 +98,11 @@
             <div data-role="header">
                 <h1>Barman Mobile</h1>
             </div>
-            <div data-role="main" class="ui-content">
+            <div data-role="main" class="ui-content" id="myBrandNew">
                 <p style="text-align:center">Moje Przepisy</p>
                 <p style="text-align:center"><img src="img/my-recipes-logo.png"></p>
                 <button onclick="location.href='index.html#addRecipe'">Dodaj Nowy Przepis!</button>
+                <hr/>
             </div>
             <div data-role="footer" id="footer"> 
                 <h3>Author: Marek Nieckula</h3>
@@ -76,6 +115,12 @@
             </div>
             <div data-role="main" class="ui-content">
                 <p style="text-align:center">Dodaj Nowy Przepis</p>
+                <label for="recipeTitle">Tytuł:</label>
+                <input type="text" id="recipeTitle">
+                <label for="recipeContent">Treść przepisu:</label>
+                <textarea id="recipeContent"></textarea>
+                <button id="addNewRecipe" onclick="addRecipe()">Dodaj!</button>
+                <button id="makePhoto" data-icon="camera"></button>
             </div>
             <div data-role="footer" id="footer"> 
                 <h3>Author: Marek Nieckula</h3>
