@@ -118,12 +118,12 @@
                 <label for="recipeTitle">Tytuł:</label>
                 <input type="text" id="recipeTitle">
                 <label for="recipeContent">Treść przepisu:</label>
-                <textarea id="recipeContent"></textarea>
+                <textarea rows="10" cols="1" id="recipeContent"></textarea>
                 <button id="addNewRecipe" onclick="addRecipe()">Dodaj!</button>
-                <button id="makePhoto" data-icon="camera"></button>
             </div>
             <div data-role="footer" id="footer"> 
-                <h3>Author: Marek Nieckula</h3>
+                <p style="text-align:center">Author: Marek Nieckula
+                    <button onclick="window.history.back();" data-icon="carat-l"></button></p>
             </div>    
         </div> <!-- Add New Recipe Page-->
         
