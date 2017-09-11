@@ -23,7 +23,7 @@
                 <button onclick="location.href='index.html#alcohol'">Z Alkoholem</button>
                 <button onclick="location.href='index.html#noAlcohol'">Bez Alkoholu</button>
                 <br/>
-                <button onclick="location.href='index.html#myRecipes'">Moje Przepisy</button>
+                <button id="btnShowRecipes" onclick="location.href='index.html#myRecipes'">Moje Przepisy</button>
             </div>
             <div data-role="footer" id="footer"> 
                 <h3>Author: Marek Nieckula</h3> 
@@ -37,7 +37,7 @@
             <div data-role="main" class="ui-content">
                 <p style="text-align:center">Drinki Z Alkoholem</p>
                 <p style="text-align:center"><img src="img/drink-alcohol-logo.png"></p>
-                <div data-role="collapsible-set">
+                <div data-role="collapsibleset">
                     <div data-role="collapsible">
                         <h3>Mojito</h3>
                         <p style="text-align:center">Mojito drink zaczynamy przygotowywać od włożenia do szklanki 4-5 cząstek limonki, 6-8 listków mięty oraz wlewamy syrop cukrowy (lub wsypujemy dwie łyżeczki cukru). Wszystko rozcieramy muddlerem. Następnie wsypujemy kruszony lód (mniej więcej do połowy) i wlewamy biały rum. Dokładnie mieszamy i uzupełniamy szklankę kruszonym lodem oraz wodą gazowaną. Mojito dekorujemy plastrem limonki i gałązką mięty.
@@ -103,8 +103,11 @@
                 <p style="text-align:center"><img src="img/my-recipes-logo.png"></p>
                 <button onclick="location.href='index.html#addRecipe'">Dodaj Nowy Przepis!</button>
                 <hr/>
+                    <div id="userRecipes" data-role="collapsibleset">
+                
+                    </div>
             </div>
-            <div data-role="footer" id="footer"> 
+            <div data-role="footer" data-position="fixed" id="footer"> 
                 <h3>Author: Marek Nieckula</h3>
             </div>    
         </div> <!-- My Recipes Page-->
@@ -119,11 +122,12 @@
                 <input type="text" id="recipeTitle">
                 <label for="recipeContent">Treść przepisu:</label>
                 <textarea id="recipeContent"></textarea>
-                <button id="addNewRecipe" onclick="addRecipe()">Dodaj!</button>
-                <button id="makePhoto" data-icon="camera"></button>
+                <button id="btnTakePic">Zrób zdjęcie!</button>
+                <button id="addNewRecipe">Dodaj!</button>
             </div>
-            <div data-role="footer" id="footer"> 
-                <h3>Author: Marek Nieckula</h3>
+            <div data-role="footer" data-position="fixed" id="footer"> 
+                <p style="text-align:center">Author: Marek Nieckula
+                    <button onclick="window.history.back();" data-icon="carat-l"></button></p>
             </div>    
         </div> <!-- Add New Recipe Page-->
         

@@ -3,6 +3,7 @@ var db;
 window.onload = function() {
     
     document.getElementById('addNewRecipe').addEventListener('click',saveData);
+    document.getElementById('btnTakePic').addEventListener('click',takePic);
     document.getElementById('btnShowRecipes').addEventListener('click',showData);
     db = window.openDatabase("recipes", "1.0", "Recipes", 1000000);
     
@@ -24,6 +25,7 @@ function readRecord(transaction) {
 
 function saveData(e) {
     
+    document.getElementById("userRecipes").innerHTML = "";
     db.transaction(saveRecord, onSuccess, onError);
 }
 
@@ -97,4 +99,28 @@ function reError(error) {
     console.log("SQL Error: " + error.code);
 }
 
-
+function takePic(e)
+        {
+            var options = {
+                quality: 80,
+                destinationType: Camera.DestinationType.FILE_URI,
+                encodingType: Camera.EncodingType.JPEG,
+                mediaType: Camera.MediaType.PICTURE,
+                targetWidth: 500,
+                targetHeight: 300
+        
+            }
+        
+         navigator.camera.getPicture(success,fail, options);
+        }
+            
+        function success(thePicture)
+        {
+            var image = thePicture;
+            alert(image);
+        }
+            
+        function fail(e)
+        {
+            alert("Image failed: " + e.message);
+        }
