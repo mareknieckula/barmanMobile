@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Barman Mobile</title>
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </head>
     <body>
@@ -122,7 +122,9 @@
                 <input type="text" id="recipeTitle">
                 <label for="recipeContent">Treść przepisu:</label>
                 <textarea id="recipeContent"></textarea>
-                <button id="btnTakePic">Zrób zdjęcie!</button>
+                <label for="addedPic">Zdjęcie</label>
+                <p style="text-align: center"><img id="addedPic"> </p>               
+                <button id="btnTakePic">Dodaj zdjęcie z galerii!</button>
                 <button id="addNewRecipe">Dodaj!</button>
             </div>
             <div data-role="footer" data-position="fixed" id="footer"> 

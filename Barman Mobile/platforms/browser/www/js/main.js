@@ -1,5 +1,6 @@
 var db;
 
+
 window.onload = function() {
     
     document.getElementById('addNewRecipe').addEventListener('click',saveData);
@@ -14,11 +15,12 @@ function showData(e) {
     
     document.getElementById("userRecipes").innerHTML = "";
     db.transaction(readRecord, reSuccess, reError);
+    location.href='index.html#myRecipes';
 }
 
 function readRecord(transaction) {
     
-    transaction.executeSql('CREATE TABLE IF NOT EXISTS recipes(id INTEGER PRIMARY KEY AUTOINCREMENT, Title TEXT NOT NULL, Content TEXT NOT NULL)');
+    transaction.executeSql('CREATE TABLE IF NOT EXISTS recipes(id INTEGER PRIMARY KEY AUTOINCREMENT, Title TEXT NOT NULL, Content TEXT NOT NULL, Image TEXT NOT NULL)');
     transaction.executeSql("SELECT * FROM recipes", [], getSuccess, getError);
 }
 
@@ -33,15 +35,14 @@ function saveRecord(transaction) {
     
     var title = document.getElementById('recipeTitle').value;
     var content = document.getElementById('recipeContent').value;
-    transaction.executeSql('CREATE TABLE IF NOT EXISTS recipes(id INTEGER PRIMARY KEY AUTOINCREMENT, Title TEXT NOT NULL, Content TEXT NOT NULL)');
+    var image = document.getElementById('addedPic').src;
+    transaction.executeSql('CREATE TABLE IF NOT EXISTS recipes(id INTEGER PRIMARY KEY AUTOINCREMENT, Title TEXT NOT NULL, Content TEXT NOT NULL, Image TEXT NOT NULL)');
     
-    var sql = "INSERT INTO recipes (Title,Content) VALUES ('" + title + "', '" + content + "')";
+    var sql = "INSERT INTO recipes (Title,Content,Image) VALUES ('" + title + "', '" + content + "', '" + image + "')";
     console.log(sql);
     transaction.executeSql(sql);
     alert("Pomyślnie dodano przepis!");
     location.href='index.html#myRecipes';
-    //location.reload();
-    //transaction.executeSql('CREATE TABLE IF NOT EXISTS recipes(id INTEGER PRIMARY KEY AUTOINCREMENT, Title TEXT NOT NULL, Content TEXT NOT NULL)');
     transaction.executeSql("SELECT * FROM recipes", [], getSuccess, getError);
     
 }
@@ -54,19 +55,25 @@ function getSuccess(tx, result)
             for(var x=0; x< rows.length; x++){
                 var title = result.rows[x].Title;
                 var content = result.rows[x].Content;
+                var image = result.rows[x].Image;
                 
                 var div = document.createElement("div");
                 var h3 = document.createElement("h3");
                 var p = document.createElement("p");
                 var button = document.createElement("button");
+                var p2 = document.createElement("p");
+                var img = document.createElement("img");
+                img.setAttribute('src',image);
                 div.setAttribute('data-role','collapsible');
                 h3.innerHTML = title;
                 p.setAttribute('style','text-align:center');
                 p.innerHTML = content + "<br/><br/>";
+                p2.innerHTML = "<br/><br/>";
                 button.innerHTML =  "Usuń ten przepis";
-                button.setAttribute('data-icon','delete');
                 div.appendChild(h3);
                 div.appendChild(p);
+                p.appendChild(img);
+                p.appendChild(p2);
                 p.appendChild(button);
                 document.getElementById("userRecipes").appendChild(div);
             }
@@ -105,9 +112,10 @@ function takePic(e)
                 quality: 80,
                 destinationType: Camera.DestinationType.FILE_URI,
                 encodingType: Camera.EncodingType.JPEG,
-                mediaType: Camera.MediaType.PICTURE,
-                targetWidth: 500,
-                targetHeight: 300
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                targetWidth: 200,
+                targetHeight: 300,
+                correctOrientation: true
         
             }
         
@@ -116,8 +124,8 @@ function takePic(e)
             
         function success(thePicture)
         {
-            var image = thePicture;
-            alert(image);
+            var image = document.getElementById('addedPic');
+            image.src = thePicture;
         }
             
         function fail(e)
