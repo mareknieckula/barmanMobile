@@ -8,6 +8,11 @@
         Marek Nieckula
     </author>
     <content src="index.html" />
+    <icon src="icons/ldpi.png" platform="android" qualifier="ldpi" />
+    <icon src="icons/mdpi.png" platform="android" qualifier="mdpi" />
+    <icon src="icons/hdpi.png" platform="android" qualifier="hdpi" />
+    <icon src="icons/xhdpi.png" platform="android" qualifier="xhdpi" />
+    <icon src="icons/xxhdpi.png" platform="android" qualifier="xxhdpi" />
     <access origin="*" />
     <plugin name="cordova-plugin-camera" spec="~2.4.1" />
 </widget>
