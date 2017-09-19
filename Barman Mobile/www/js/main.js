@@ -70,6 +70,14 @@ function getSuccess(tx, result)
                 p.innerHTML = content + "<br/><br/>";
                 p2.innerHTML = "<br/><br/>";
                 button.innerHTML =  "Usuń ten przepis";
+                button.onclick = function(){
+                    
+                    db.transaction(function(transaction) {
+                    transaction.executeSql('DELETE FROM recipes WHERE id=?', [x], function(transaction, result) {
+                    alert('Pomyślnie usunięto!');
+                    }, function(transaction, error) {
+                        alert(error);});})
+                }
                 div.appendChild(h3);
                 div.appendChild(p);
                 p.appendChild(img);
@@ -78,6 +86,7 @@ function getSuccess(tx, result)
                 document.getElementById("userRecipes").appendChild(div);
             }
             $('#userRecipes').collapsibleset('refresh');
+            
             
             
         }
