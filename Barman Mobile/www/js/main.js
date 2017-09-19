@@ -56,6 +56,7 @@ function getSuccess(tx, result)
                 var title = result.rows[x].Title;
                 var content = result.rows[x].Content;
                 var image = result.rows[x].Image;
+                var id = result.rows[x].id;
                 
                 var div = document.createElement("div");
                 var h3 = document.createElement("h3");
@@ -73,10 +74,12 @@ function getSuccess(tx, result)
                 button.onclick = function(){
                     
                     db.transaction(function(transaction) {
-                    transaction.executeSql('DELETE FROM recipes WHERE id=?', [x], function(transaction, result) {
+                    transaction.executeSql('DELETE FROM recipes WHERE id=?', [id], function(transaction, result) {
                     alert('Pomyślnie usunięto!');
                     }, function(transaction, error) {
-                        alert(error);});})
+                        alert(error);});
+                    })
+                    
                 }
                 div.appendChild(h3);
                 div.appendChild(p);
