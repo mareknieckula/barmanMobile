@@ -64,6 +64,8 @@ function getSuccess(tx, result)
                 var button = document.createElement("button");
                 var p2 = document.createElement("p");
                 var img = document.createElement("img");
+                var fb = document.createElement("img");
+                fb.src="img/fb.png";
                 img.setAttribute('src',image);
                 div.setAttribute('data-role','collapsible');
                 h3.innerHTML = title;
@@ -85,16 +87,21 @@ function getSuccess(tx, result)
                         }, function(transaction, error) {
                         alert(error);});
                         })
-                    
+                        showData();
                     },
                     'Potwierdź usunięcie',
                     
                     'Tak,Nie'
                     );}
+                fb.onclick = function () {
+                    
+                    window.plugins.socialsharing.shareViaFacebook(content, image /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+                }
                 div.appendChild(h3);
                 div.appendChild(p);
                 p.appendChild(img);
                 p.appendChild(p2);
+                p2.appendChild(fb);
                 p.appendChild(button);
                 document.getElementById("userRecipes").appendChild(div);
             

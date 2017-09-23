@@ -11,5 +11,10 @@
         Marek Nieckula
     </author>
     <content src="index.html" />
+    <icon platform="android" qualifier="ldpi" src="icons/ldpi.png" />
+    <icon platform="android" qualifier="mdpi" src="icons/mdpi.png" />
+    <icon platform="android" qualifier="hdpi" src="icons/hdpi.png" />
+    <icon platform="android" qualifier="xhdpi" src="icons/xhdpi.png" />
+    <icon platform="android" qualifier="xxhdpi" src="icons/xxhdpi.png" />
     <access origin="*" />
 </widget>

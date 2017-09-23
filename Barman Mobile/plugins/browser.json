@@ -9,10 +9,16 @@
     "installed_plugins": {
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "es6-promise-plugin": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     }

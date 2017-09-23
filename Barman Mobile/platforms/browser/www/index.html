@@ -6,7 +6,7 @@
         <title>Barman Mobile</title>
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </head>
@@ -16,7 +16,7 @@
             <div data-role="header">
                 <h1>Barman Mobile</h1>
             </div>
-            <div data-role="main" class="ui-content">
+            <div data-role="main" class="ui-content" id="homePage" style="margin-bottom: 35px">
                 <p style="text-align: center">Na jakiego drinka masz dziś ochotę?</p>
                 <p style="text-align: center"><img src="img/drink-logo.png" alt="logo"></p>
                 <br/>
@@ -25,12 +25,16 @@
                 <br/>
                 <button id="btnShowRecipes" onclick="location.href='index.html#myRecipes'">Moje Przepisy</button>
             </div>
-            <div data-role="footer" id="footer"> 
-                <h3>Author: Marek Nieckula</h3> 
-            </div> 
+             <div data-role="footer" style="position:fixed" style="bottom:0px" style="height: 35px" id="footer">
+                <div data-role="controlgroup" data-type="horizontal" style="margin-left: 20%">
+                <a href="#" onclick="showInfo()" data-role="button" data-icon="info">Info</a>
+                <a onclick="location.href='index.html#homePage'" data-role="button" data-icon="home">Główna</a>
+                <a onclick="window.history.back()" data-role="button" data-icon="back">Wstecz</a>
+                </div>
+            </div>
         </div> <!-- Home Page -->
             
-        <div data-role="page" data-theme="b" id="alcohol">
+        <div data-role="page" data-theme="b" id="alcohol" style="margin-bottom: 35px">
             <div data-role="header" id="mainHead">
                 <h1>Barman Mobile</h1>
             </div>
@@ -76,12 +80,16 @@
                     </div> <!--Collapsible item 2-->
                 </div> <!--Collapsible Set-->
              </div>
-            <div data-role="footer" id="footer"> 
-                <h3>Author: Marek Nieckula</h3>
-            </div>    
+             <div data-role="footer" style="position:fixed" style="bottom:0px" style="height: 35px" id="footer">
+                <div data-role="controlgroup" data-type="horizontal" style="margin-left: 20%">
+                <a href="#" onclick="showInfo()" data-role="button" data-icon="info">Info</a>
+                <a onclick="location.href='index.html#homePage'" data-role="button" data-icon="home">Główna</a>
+                <a onclick="window.history.back()" data-role="button" data-icon="back">Wstecz</a>
+                </div>
+            </div>   
         </div> <!-- Alcohol Page-->
         
-        <div data-role="page" data-theme="b" id="noAlcohol">
+        <div data-role="page" data-theme="b" id="noAlcohol" style="margin-bottom: 35px">
             <div data-role="header">
                 <h1>Barman Mobile</h1>
             </div>
@@ -89,16 +97,20 @@
                 <p style="text-align:center">Drinki Bez Alkoholu</p>
                 <p style="text-align:center"><img src="img/drink-no-alcohol-logo.png"></p>
             </div>
-            <div data-role="footer" id="footer"> 
-                <h3>Author: Marek Nieckula</h3>
-            </div>    
+             <div data-role="footer" style="position:fixed" style="bottom:0px" style="height: 35px" id="footer">
+                <div data-role="controlgroup" data-type="horizontal" style="margin-left: 20%">
+                <a href="#" onclick="showInfo()" data-role="button" data-icon="info">Info</a>
+                <a onclick="location.href='index.html#homePage'" data-role="button" data-icon="home">Główna</a>
+                <a onclick="window.history.back()" data-role="button" data-icon="back">Wstecz</a>
+                </div>
+            </div>   
         </div> <!-- No Alcohol Page-->
         
         <div data-role="page" data-theme="b" id="myRecipes">
             <div data-role="header">
                 <h1>Barman Mobile</h1>
             </div>
-            <div data-role="main" class="ui-content" id="myBrandNew">
+            <div data-role="main" class="ui-content" id="myBrandNew" style="margin-bottom: 35px">
                 <p style="text-align:center">Moje Przepisy</p>
                 <p style="text-align:center"><img src="img/my-recipes-logo.png"></p>
                 <button onclick="location.href='index.html#addRecipe'">Dodaj Nowy Przepis!</button>
@@ -107,16 +119,20 @@
                 
                     </div>
             </div>
-            <div data-role="footer" data-position="fixed" id="footer"> 
-                <h3>Author: Marek Nieckula</h3>
-            </div>    
+             <div data-role="footer" style="position:fixed" style="bottom:0px" style="height: 35px" id="footer">
+                <div data-role="controlgroup" data-type="horizontal" style="margin-left: 20%">
+                <a href="#" onclick="showInfo()" data-role="button" data-icon="info">Info</a>
+                <a onclick="location.href='index.html#homePage'" data-role="button" data-icon="home">Główna</a>
+                <a onclick="window.history.back()" data-role="button" data-icon="back">Wstecz</a>
+                </div>
+            </div>  
         </div> <!-- My Recipes Page-->
         
         <div data-role="page" data-theme="b" id="addRecipe">
             <div data-role="header">
                 <h1>Barman Mobile</h1>
             </div>
-            <div data-role="main" class="ui-content">
+            <div data-role="main" class="ui-content" style="margin-bottom: 35px">
                 <p style="text-align:center">Dodaj Nowy Przepis</p>
                 <label for="recipeTitle">Tytuł:</label>
                 <input type="text" id="recipeTitle">
@@ -127,9 +143,12 @@
                 <button id="btnTakePic">Dodaj zdjęcie z galerii!</button>
                 <button id="addNewRecipe">Dodaj!</button>
             </div>
-            <div data-role="footer" data-position="fixed" id="footer"> 
-                <p style="text-align:center">Author: Marek Nieckula
-                    <button onclick="window.history.back();" data-icon="carat-l"></button></p>
+            <div data-role="footer" style="position:fixed" style="bottom:0px" style="height: 35px" id="footer">
+                <div data-role="controlgroup" data-type="horizontal" style="margin-left: 20%">
+                <a href="#" onclick="showInfo()" data-role="button" data-icon="info">Info</a>
+                <a onclick="location.href='index.html#homePage'" data-role="button" data-icon="home">Główna</a>
+                <a onclick="window.history.back()" data-role="button" data-icon="back">Wstecz</a>
+                </div>
             </div>    
         </div> <!-- Add New Recipe Page-->
         
