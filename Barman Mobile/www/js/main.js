@@ -41,7 +41,7 @@ function saveRecord(transaction) {
     var sql = "INSERT INTO recipes (Title,Content,Image) VALUES ('" + title + "', '" + content + "', '" + image + "')";
     console.log(sql);
     transaction.executeSql(sql);
-    alert("Pomyślnie dodano przepis!");
+    navigator.notification.alert('Pomyślnie dodano przepis na ' + title + '!',false,'Nowy przepis','OK, Super!');
     location.href='index.html#myRecipes';
     transaction.executeSql("SELECT * FROM recipes", [], getSuccess, getError);
     
@@ -71,26 +71,37 @@ function getSuccess(tx, result)
                 p.innerHTML = content + "<br/><br/>";
                 p2.innerHTML = "<br/><br/>";
                 button.innerHTML =  "Usuń ten przepis";
-                button.onclick = function(){
+                button.onclick = function() {
+                    
+                navigator.notification.confirm(
+                    
+                    'Czy napewno chcesz usunąć przepis na ' + title + '?',
+                    
+                    function(){
                     
                     db.transaction(function(transaction) {
                     transaction.executeSql('DELETE FROM recipes WHERE id=?', [id], function(transaction, result) {
-                    alert('Pomyślnie usunięto!');
-                    }, function(transaction, error) {
+                        navigator.notification.alert('Pomyślnie usunięto przepis na '+title+'!',false,'Usuwanie zakończone','W porządku!');
+                        }, function(transaction, error) {
                         alert(error);});
-                    })
+                        })
                     
-                }
+                    },
+                    'Potwierdź usunięcie',
+                    
+                    'Tak,Nie'
+                    );}
                 div.appendChild(h3);
                 div.appendChild(p);
                 p.appendChild(img);
                 p.appendChild(p2);
                 p.appendChild(button);
                 document.getElementById("userRecipes").appendChild(div);
-            }
+            
+                
             $('#userRecipes').collapsibleset('refresh');
             
-            
+            }
             
         }
         function getError(e)
@@ -121,7 +132,7 @@ function reError(error) {
 function takePic(e)
         {
             var options = {
-                quality: 80,
+                quality: 100,
                 destinationType: Camera.DestinationType.FILE_URI,
                 encodingType: Camera.EncodingType.JPEG,
                 sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
@@ -144,3 +155,13 @@ function takePic(e)
         {
             alert("Image failed: " + e.message);
         }
+
+function showInfo() {
+    
+    info =  'Tytuł: Barman Mobile' + '\n' +
+            'Wersja: 1.0' + '\n' +
+            'Autor: Marek Nieckula' + '\n' +
+            'Opis: Aplikacja Barman Mobile - baza Twoich przepisów na drinki alkoholowe i bezalkoholowe. Użytkownik może dodać własny przepis (będzie on przechowywany w lokalnej bazie danych), do przepisu może dołączyć zdjęcie wybrane z galerii urządzenia mobilbnego. Użyte technologie: WebSQL oraz wtyczka cordova.camera.'
+    
+    navigator.notification.alert(info,false,'Informacje o Aplikcaji','OK, wszystko jasne!');
+}
