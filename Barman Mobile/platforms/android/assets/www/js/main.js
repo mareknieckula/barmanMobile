@@ -171,7 +171,8 @@ function showInfo() {
     info =  'Tytuł: Barman Mobile' + '\n' +
             'Wersja: 1.0' + '\n' +
             'Autor: Marek Nieckula' + '\n' +
-            'Opis: Aplikacja Barman Mobile - baza Twoich przepisów na drinki alkoholowe i bezalkoholowe. Użytkownik może dodać własny przepis (będzie on przechowywany w lokalnej bazie danych), do przepisu może dołączyć zdjęcie wybrane z galerii urządzenia mobilbnego. Użyte technologie: WebSQL oraz wtyczka cordova.camera.'
+            'Opis: Aplikacja Barman Mobile - baza Twoich przepisów na drinki alkoholowe i bezalkoholowe. Użytkownik może dodać własny przepis (będzie on przechowywany w lokalnej bazie danych), do przepisu może dołączyć zdjęcie wybrane z galerii urządzenia.' + '\n' +
+            'Użyte technologie: WebSQL, Pluginy: cordova.camera, cordova.socialsharing, cordova.dialogs, cordova.splashscreen.'
     
     navigator.notification.alert(info,false,'Informacje o Aplikcaji','OK, wszystko jasne!');
 }
