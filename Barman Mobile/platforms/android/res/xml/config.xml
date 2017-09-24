@@ -9,6 +9,10 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <name>Barman Mobile</name>
     <description>
         Barman Mobile - A Alcohol/Non-Alcohol recipes hybrid mobile app created with phonegap.
