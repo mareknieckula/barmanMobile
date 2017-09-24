@@ -93,7 +93,10 @@ function getSuccess(tx, result)
                     
                     'Tak,Nie'
                     );}
-                
+                fb.onclick = function () {
+                    
+                    window.plugins.socialsharing.shareViaFacebook(content, image /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+                }
                 div.appendChild(h3);
                 div.appendChild(p);
                 p.appendChild(img);
