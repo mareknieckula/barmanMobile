@@ -19,6 +19,8 @@
     <plugin name="cordova-plugin-dialogs" spec="~1.3.3" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.3" />
     
+    <splash src="splash.png" />
+    
     <splash platform="android" qualifier="port-ldpi" src="splash/screen-ldpi-portrait.png" />
     <splash platform="android" qualifier="port-mdpi" src="splash/screen-mdpi-portrait.png" />
     <splash platform="android" qualifier="port-hdpi" src="splash/screen-hdpi-portrait.png" />
