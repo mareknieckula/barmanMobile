@@ -96,10 +96,8 @@ function getSuccess(tx, result)
                     
                     'Tak,Nie'
                     );}
-                fb.onclick = function () {
-                    
-                    window.plugins.socialsharing.shareViaFacebook(content, image /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
-                }
+                    fb.onclick = function () {
+                        window.plugins.socialsharing.shareViaFacebookWithPasteMessageHint(content, image, null /* url */, 'Wklej tekst do posta!', function() {console.log('share ok')}, function(errormsg){alert(errormsg)});   }
                 div.appendChild(h3);
                 div.appendChild(p);
                 p.appendChild(img);

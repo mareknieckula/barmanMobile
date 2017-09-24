@@ -73,6 +73,14 @@ module.exports = [
         "id": "cordova-plugin-splashscreen.SplashScreenProxy",
         "pluginId": "cordova-plugin-splashscreen",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-clipboard/www/client.js",
+        "id": "cordova-plugin-clipboard.client",
+        "pluginId": "cordova-plugin-clipboard",
+        "clobbers": [
+            "community.clipboard"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -83,7 +91,8 @@ module.exports.metadata =
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.1.8",
     "cordova-plugin-dialogs": "1.3.3",
-    "cordova-plugin-splashscreen": "4.0.3"
+    "cordova-plugin-splashscreen": "4.0.3",
+    "cordova-plugin-clipboard": "1.0.0"
 }
 // BOTTOM OF METADATA
 });
