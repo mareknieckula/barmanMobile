@@ -44,6 +44,9 @@ function saveRecord(transaction) {
     navigator.notification.alert('Pomyślnie dodano przepis na ' + title + '!',false,'Nowy przepis','OK, Super!');
     location.href='index.html#myRecipes';
     transaction.executeSql("SELECT * FROM recipes", [], getSuccess, getError);
+    document.getElementById('recipeTitle').value="";
+    document.getElementById('recipeContent').value="";
+    document.getElementById('addedPic').src="";
     
 }
 
@@ -171,4 +174,9 @@ function showInfo() {
             'Opis: Aplikacja Barman Mobile - baza Twoich przepisów na drinki alkoholowe i bezalkoholowe. Użytkownik może dodać własny przepis (będzie on przechowywany w lokalnej bazie danych), do przepisu może dołączyć zdjęcie wybrane z galerii urządzenia mobilbnego. Użyte technologie: WebSQL oraz wtyczka cordova.camera.'
     
     navigator.notification.alert(info,false,'Informacje o Aplikcaji','OK, wszystko jasne!');
+}
+
+function quitApp() {
+    
+    navigator.app.exitApp();
 }

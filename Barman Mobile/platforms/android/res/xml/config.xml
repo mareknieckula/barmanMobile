@@ -27,5 +27,15 @@
     <icon platform="android" qualifier="xhdpi" src="icons/xhdpi.png" />
     <icon platform="android" qualifier="xxhdpi" src="icons/xxhdpi.png" />
     <access origin="*" />
+    <splash src="splash.png" />
+    <splash platform="android" qualifier="port-ldpi" src="splash/screen-ldpi-portrait.png" />
+    <splash platform="android" qualifier="port-mdpi" src="splash/screen-mdpi-portrait.png" />
+    <splash platform="android" qualifier="port-hdpi" src="splash/screen-hdpi-portrait.png" />
+    <splash platform="android" qualifier="port-xhdpi" src="splash/screen-xhdpi-portrait.png" />
+    <splash platform="android" qualifier="land-ldpi" src="splash/screen-ldpi-portrait.png" />
+    <splash platform="android" qualifier="land-mdpi" src="splash/screen-mdpi-portrait.png" />
+    <splash platform="android" qualifier="land-hdpi" src="splash/screen-hdpi-portrait.png" />
+    <splash platform="android" qualifier="land-xhdpi" src="splash/screen-xhdpi-portrait.png" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="SplashScreenDelay" value="5000" />
 </widget>

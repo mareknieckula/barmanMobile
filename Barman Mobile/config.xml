@@ -30,4 +30,6 @@
     <splash platform="android" qualifier="land-mdpi" src="splash/screen-mdpi-portrait.png" />
     <splash platform="android" qualifier="land-hdpi" src="splash/screen-hdpi-portrait.png" />
     <splash platform="android" qualifier="land-xhdpi" src="splash/screen-xhdpi-portrait.png" />
+    
+    <preference name="SplashScreenDelay" value="5000" />
 </widget>
